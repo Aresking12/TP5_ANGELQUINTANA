@@ -1,0 +1,396 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    padding: 20px;
+    animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Header con animación */
+header {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+    padding: 30px;
+    color: white;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    text-align: center;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    animation: slideDown 0.6s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    margin: 0;
+    font-size: 32px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    animation: titlePulse 2s ease-in-out infinite;
+}
+
+@keyframes titlePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+.descripcion {
+    font-size: 18px;
+    margin-top: 10px;
+    opacity: 0.95;
+}
+
+/* Sección de bienvenida */
+#bienvenida-section {
+    background: rgba(255, 255, 255, 0.95);
+    max-width: 500px;
+    margin: 0 auto 30px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#mensajeBienvenida {
+    color: #667eea;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+#nombreUsuario {
+    color: #555;
+    font-size: 18px;
+}
+
+/* Botones con efectos */
+.botones {
+    text-align: center;
+    margin-top: 30px;
+    animation: fadeIn 1s ease-out 0.3s both;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.btn {
+    display: inline-block;
+    margin: 15px;
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-size: 18px;
+    font-weight: 600;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+}
+
+.btn:active {
+    transform: translateY(-2px) scale(1.02);
+}
+
+.volver {
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%) !important;
+    color: #667eea !important;
+    border: 3px solid #667eea !important;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2) !important;
+}
+
+.volver:hover {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+    color: #764ba2 !important;
+    border-color: #764ba2 !important;
+}
+
+/* Formulario mejorado */
+.formulario {
+    max-width: 700px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.98);
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+    animation: scaleIn 0.6s ease-out;
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.formulario label {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.formulario input,
+.formulario select {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    font-size: 15px;
+    background: #fafafa;
+}
+
+.formulario input:focus,
+.formulario select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 15px rgba(102, 126, 234, 0.3);
+    background: white;
+    transform: translateY(-2px);
+}
+
+/* Preguntas del examen */
+.pregunta {
+    margin-bottom: 30px;
+    text-align: left;
+    padding: 25px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 15px;
+    border-left: 5px solid #667eea;
+    transition: all 0.3s ease;
+    animation: slideInLeft 0.5s ease-out backwards;
+}
+
+.pregunta:nth-child(1) { animation-delay: 0.1s; }
+.pregunta:nth-child(2) { animation-delay: 0.2s; }
+.pregunta:nth-child(3) { animation-delay: 0.3s; }
+.pregunta:nth-child(4) { animation-delay: 0.4s; }
+.pregunta:nth-child(5) { animation-delay: 0.5s; }
+.pregunta:nth-child(6) { animation-delay: 0.6s; }
+.pregunta:nth-child(7) { animation-delay: 0.7s; }
+.pregunta:nth-child(8) { animation-delay: 0.8s; }
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.pregunta:hover {
+    transform: translateX(10px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+}
+
+.pregunta h3 {
+    color: #667eea;
+    font-size: 18px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.pregunta h3::before {
+    content: '❓';
+    margin-right: 10px;
+    font-size: 22px;
+}
+
+.opciones label {
+    display: block;
+    margin-bottom: 12px;
+    padding: 12px 15px;
+    background: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.opciones label:hover {
+    background: #f0f4ff;
+    border-color: #667eea;
+    transform: translateX(5px);
+}
+
+.opciones input[type="radio"] {
+    margin-right: 10px;
+    cursor: pointer;
+    accent-color: #667eea;
+    width: 18px;
+    height: 18px;
+}
+
+/* Resultado con animaciones especiales */
+.resultado {
+    display: none;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 50px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(31, 38, 135, 0.4);
+    border: 3px solid #667eea;
+    text-align: center;
+}
+
+.resultado.mostrar {
+    display: block;
+    animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.resultado h2 {
+    color: #667eea;
+    margin-bottom: 25px;
+    font-size: 32px;
+}
+
+.resultado h2::before {
+    content: '🎓 ';
+    font-size: 40px;
+}
+
+.nota {
+    font-size: 72px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 30px 0;
+    animation: notaScale 1s ease-in-out infinite alternate;
+}
+
+@keyframes notaScale {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+
+#resMensaje {
+    font-size: 22px;
+    margin: 20px 0;
+    font-weight: 600;
+    color: #555;
+}
+
+/* Efectos adicionales */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.btn {
+    animation: float 3s ease-in-out infinite;
+}
+
+.btn:nth-child(1) { animation-delay: 0s; }
+.btn:nth-child(2) { animation-delay: 0.5s; }
+.btn:nth-child(3) { animation-delay: 1s; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .formulario, .resultado {
+        padding: 25px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    .btn {
+        display: block;
+        margin: 10px auto;
+        max-width: 250px;
+    }
+    
+    .nota {
+        font-size: 56px;
+    }
+}
